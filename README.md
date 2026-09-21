@@ -1,11 +1,15 @@
 # 🤖 Face ID Lab — Biometric Face Recognition & Identification System
 
-A beginner-friendly **Face Recognition Identification System** running in your web browser. Enrolls individuals from real-time webcam snapshots or uploaded photos, computes 128-dimensional biometric embeddings, performs 1:N gallery matching using cosine similarity, and protects against false acceptances using a 4-stage **"Unknown"** rejection mechanism.
+Face ID Lab is a web-based face recognition application built with Python, OpenCV, and Streamlit. The system allows users to register faces using webcam captures or uploaded images and identify registered individuals by comparing facial feature embeddings.
 
-Features a futuristic **Biometric Sci-Fi HUD interface** modeled directly on high-tech biometric scanning templates, complete with facial landmark wireframe triangulation mesh overlays, real-time confidence telemetry, and a quick-quit shutdown button.
+The application uses YuNet for face detection and SFace for generating 128-dimensional face embeddings. It also includes similarity-based matching and rejection rules to reduce incorrect identifications and classify uncertain cases as Unknown.
 
 ---
+🚀 Live Demo
 
+👉 Open Face ID Lab https://face-id-lab.streamlit.app
+
+The application is deployed using Streamlit and can be accessed directly from a web browser.
 ## 🚀 How to Start
 
 ### Step 1: Install Dependencies
@@ -149,51 +153,3 @@ All 5 core tests verify:
 - Biometric HUD landmark mesh rendering
 
 ---
-
-## 📁 Repository Structure (Arranged for GitHub Upload)
-
-```
-face-recognition-identification/
-├── .gitignore               # Ignores large ONNX weights, local database, and caches
-├── .streamlit/
-│   └── config.toml          # Sci-Fi dark HUD theme configuration
-├── assets/                  # Biometric HUD templates and visual blueprints
-│   ├── media_1789982050295.jpg
-│   └── media_1789981751054.jpg
-├── data/
-│   ├── gallery/             # Enrolled identity storage (tracked via .gitkeep)
-│   │   └── .gitkeep
-│   └── models/              # Downloaded ONNX models (tracked via .gitkeep)
-│       └── .gitkeep
-├── src/
-│   └── face_id/
-│       ├── __init__.py
-│       ├── __main__.py
-│       ├── cli.py           # Optional command-line interface
-│       ├── config.py        # Default thresholds and configurations
-│       ├── detector.py      # YuNet face detector wrapper
-│       ├── embedder.py      # SFace 128-D vector extractor
-│       ├── evaluate.py      # Essential evaluation benchmark
-│       ├── gallery.py       # Gallery storage (index.json + embeddings.npz)
-│       ├── hud.py           # Sci-Fi biometric mesh & telemetry overlay renderer
-│       ├── matcher.py       # Cosine similarity & 4-stage unknown engine
-│       ├── models.py        # Automatic ONNX models downloader
-│       └── pipeline.py      # End-to-end identification pipeline
-├── tests/
-│   └── test_face_id.py      # Essential core unit tests
-├── app.py                   # Streamlit Web Application
-├── pyproject.toml           # Project package configuration
-├── requirements.txt         # Project dependencies
-├── start.bat                # 1-click Windows web application launcher
-└── README.md                # Comprehensive documentation
-```
-
-### 📤 How to Push to GitHub
-```powershell
-git add .
-git commit -m "Initial commit: Face ID Lab Web Application with Biometric HUD"
-git branch -M main
-git remote add origin https://github.com/YOUR_USERNAME/YOUR_REPO_NAME.git
-git push -u origin main
-```
-*(Large ONNX model weights are automatically excluded by `.gitignore` and download automatically on first run via `models.py`)*
