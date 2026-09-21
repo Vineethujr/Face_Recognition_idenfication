@@ -49,8 +49,6 @@ The app opens automatically in your web browser at **[http://localhost:8501](htt
    - Go to **People** to inspect registered identities and template counts, delete individuals, or clear the database.
 4. **Tune Sensitivity Sliders**:
    - Adjust the **Cosine Threshold ($\tau$)** or **Ambiguity Margin ($\Delta$)** sliders in the sidebar with live effect.
-5. **Quick Quit**:
-   - Click the **⏹️ Quick Quit** button in the sidebar to stop the application server cleanly.
 
 ---
 
